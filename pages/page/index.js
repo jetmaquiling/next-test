@@ -1,26 +1,26 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../../styles/Home.module.css'
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head>
-          <title>Main Page Testing Article Written Here To Test If Article Image Change On Demand!</title>
-          <meta property="og:type"   content="website" />
-          <meta property="og:description"  content="This Is A Description Written Here Okay!" />
-          <meta property="og:image" content="https://cdn.wallpapersafari.com/36/75/YNSdhu.jpg" key="ogimage" />
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+        <Head>
+            <title>Page Testing Article Written Here To Test If Article Image Change On Demand!</title>
+            <meta property="og:type"   content="website" />
+            <meta property="og:description"  content="This Is A Description Written Here Okay!" />
+            <meta property="og:image" content="https://wallpaperaccess.com/full/2918043.jpg" key="ogimage" />
+            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="/page"> Main Next.js!</a>
+          Welcome to <a href="https://nextjs.org">Next.js! Page Testing Article</a>
         </h1>
 
         <p className={styles.description}>
-          Get started by Main editing{' '}
-          <code className={styles.code}> Main pages/index.js</code>
+          Get started by Page Testing Article{' '}
+          <code className={styles.code}>pages/index.js</code>
         </p>
 
         <div className={styles.grid}>
