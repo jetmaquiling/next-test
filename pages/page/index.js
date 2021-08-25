@@ -1,21 +1,36 @@
+import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
+import axios from 'axios';
+
 
 export default function Home() {
+  const [blog, setBlog] = React.useState({});
+  const [image, setImage] = React.useState("");
+
+  React.useEffect(() => {
+      async function getBlogs() { 
+          const {data} = await axios.get(`https://pcmjourney.herokuapp.com/blogs/7`);
+          setImage(data.clipboard.url)
+          setBlog(data)
+      }
+      getBlogs()
+  }, [])
+
   return (
     <div className={styles.container}>
         <Head>
-            <title>Page Testing Article Written Here To Test If Article Image Change On Demand!</title>
+            <title>{blog.title}</title>
             <meta property="og:type"   content="website" />
-            <meta property="og:description"  content="This Is A Description Written Here Okay!" />
-            <meta property="og:image" content="https://wallpaperaccess.com/full/2918043.jpg" key="ogimage" />
+            <meta property="og:description"  content={blog.description} />
+            <meta property="og:image" content={image} key="ogimage" />
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js! Page Testing Article</a>
+          I Am Testing The Thumbnail For Blog 7
         </h1>
 
         <p className={styles.description}>
@@ -25,8 +40,8 @@ export default function Home() {
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
+            <h2>{blog.title}</h2>
+            <p>{blog.description}</p>
           </a>
 
           <a href="https://nextjs.org/learn" className={styles.card}>
