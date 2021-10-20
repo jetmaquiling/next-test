@@ -8,48 +8,30 @@ import axios from 'axios';
 
 
 export default function Home() {
-  const [blog, setBlog] = React.useState({});
-  const [image, setImage] = React.useState("");
-
-  React.useEffect(() => {
-      async function getBlogs() { 
-          const {data} = await axios.get(`https://pcmjourney.herokuapp.com/blogs/5`);
-          setImage(data.clipboard.url)
-          setBlog(data)
-      }
-      getBlogs()
-  }, [])
-
 
   return (
     <div className={styles.container}>
-      <Head>
-            <title>{blog.title}</title>
-            <meta property="og:type"   content="website" />
-            <meta property="og:description"  content={blog.description} />
-            <meta property="og:image" content={image} key="ogimage" />
-            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+     
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          {blog.title}
+          testing 
         </h1>
 
         <p className={styles.description}>
           Get started by Main editing{' '}
-          <code className={styles.code}> Main pages/index.js</code>
+          <code className={styles.code}>What</code>
         </p>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
-            <p>{blog.description}</p>
+            <p>"DUDU</p>
           </a>
 
           <a href="https://nextjs.org/learn" className={styles.card}>
             <h2>Learn &rarr;</h2>
-            <p>{blog.description}</p>
+            <p>"DUDU</p>
           </a>
 
           <a
@@ -86,4 +68,5 @@ export default function Home() {
       </footer>
     </div>
   )
+
 }
